@@ -1,9 +1,15 @@
-const App = (props) => {
+// this is card 
+import "./Props.css"
+
+const App = ({img,title,pera,btn}) => {
     return(
         <>
-        <h1>my name is {props.myname}</h1>
-        <h2>my age is {props.age}</h2>
-        <h3>my email is {props.email}</h3>
+        <div className="card">
+            <img src={img} alt="" />
+            <h1>{title}</h1>
+            <p>{pera}</p>
+            <button>{btn}</button>
+        </div>
         </>
     )
 }
