@@ -13,10 +13,7 @@ const App = () =>{
             <div className="w-60 h-60 border bg-amber-400"></div>
             <div className="w-60 h-60 border bg-amber-400"></div>
             <div className="w-60 h-60 border bg-amber-400"></div>
-        </div>
-
-
-        
+        </div> 
         </>
     )
 }
