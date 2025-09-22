@@ -15,6 +15,7 @@ const App = () => {
                     <Route index element={<Rhome />}/>
                     <Route path="about" element={<Rabout />} />
                     <Route path="contact" element={<Rcontact />} />
+                    <Route path="*" element={<h1>Error</h1>} />
                 </Route>
 
             </Routes>
