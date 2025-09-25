@@ -9,20 +9,29 @@ const App = ()=>{
     //     console.log(e.target.value);
     //     setval(e.target.value)
     // }
+
+    let handlePrevent = (e)=>{
+        e.preventDefault();
+        alert("Form submitted");
+    }
     return (
         <>
             <h1>Form</h1>   
-            Name :<input type="text" value={name} onChange={(e)=>{setname(e.target.value)}} /> <br /> <br />
-            <h1>{name}</h1>
+            <form onSubmit={handlePrevent}>
+                Name :<input type="text" value={name} onChange={(e)=>{setname(e.target.value)}} /> <br /> <br />
+                <h1>{name}</h1>
 
-            Email : <input type="text" value={email} onChange={(e)=>{setemail(e.target.value)}} /> <br /> <br />
-            <h1>{email}</h1>
+                Email : <input type="text" value={email} onChange={(e)=>{setemail(e.target.value)}} /> <br /> <br />
+                <h1>{email}</h1>
 
-            Contact : <input type="text" value={contact} onChange={(e)=>{setcontact(e.target.value)}} /> <br />  <br />
-            <h1>{contact}</h1>
+                Contact : <input type="text" value={contact} onChange={(e)=>{setcontact(e.target.value)}} /> <br />  <br />
+                <h1>{contact}</h1>
 
-            Password : <input type="text" value={password} onChange={(e)=>{setpassword(e.target.value)}} /> <br /> <br />
-            <h1>{password}</h1>
+                Password : <input type="text" value={password} onChange={(e)=>{setpassword(e.target.value)}} /> <br /> <br />
+                <h1>{password}</h1>
+
+                <button type="submit">submit</button>
+            </form>
         </>
     )
 
