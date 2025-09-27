@@ -4,8 +4,6 @@ const App = () => {
     return(
         <>
         <Props img={pic1} title="Fixitfast" pera="hello this is peragraph for fixitfast" btn="Click"/>
-
-
         </>
     )
 }

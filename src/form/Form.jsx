@@ -1,60 +1,105 @@
 import { useState } from "react";
 
-const App = ()=>{
-    const [name,setname] = useState("")
-    const [email,setemail] = useState("")
-    const [contact,setcontact] = useState("")
-    const [password,setpassword] = useState("")
-    // const change = (e)=>{
-    //     console.log(e.target.value);
-    //     setval(e.target.value)
-    // }
+const App = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    contact: "",
+    password: "",
+  });
 
-    let [errname,seterrname] = useState("")
-    let handlePrevent = (e)=>{
-        e.preventDefault();
-        if(name== ""){
-            seterrname("name is required")
-        }
-        else{
-            alert("Form submitted");
-        }
+  const [errors, setErrors] = useState({});
+
+  // Input change handler
+  const changeInp = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Form submit handler
+  const handlePrevent = (e) => {
+    e.preventDefault();
+    let newErrors = {};
+
+    if (formData.name.trim() === "") {
+      newErrors.name = "Name is required";
+      localStorage.setItem
+    }
+    if (formData.email.trim() === "") {
+      newErrors.email = "Email is required";
+    }
+    if (formData.contact.trim() === "") {
+      newErrors.contact = "Contact is required";
+    }
+    if (formData.password.trim() === "") {
+      newErrors.password = "Password is required";
     }
 
-    const [formData,setformdata] = useState({
-        name:"",
-        email:"",
-        contact:"",
-        password:""
-    }) 
+    setErrors(newErrors);
 
-    let changeInp=(e)=>{
-        setformdata({
-            ...formData,
-            [e.target.name]:e.target.value
-        })
-    }
-    return (
-        <>
-            <h1>Form</h1>   
-            <form onSubmit={handlePrevent}>
-                Name :<input type="text" name="name" value={formData.name} onChange={changeInp} /> <br /> <br />
-                <h1>{formData.name}</h1>
-                <h2>{errname}</h2>  33
-                Email : <input type="text" name="email" value={formData.email} onChange={changeInp}/> <br /> <br />
-                <h1>{formData.email}</h1>
+  
+    localStorage.setItem("formData", JSON.stringify(formData));
 
-                Contact : <input type="text" name="contact" value={formData.contact} onChange={changeInp} /> <br />  <br />
-                <h1>{formData.contact}</h1>
+  };
 
-                Password : <input type="text" name="password" value={formData.password} onChange={changeInp} /> <br /> <br />
-                <h1>{formData.password}</h1>
+  return (
+    <>
+      <h1>Form</h1>
+      <form onSubmit={handlePrevent}>
+        {/* Name */}
+        Name:{" "}
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={changeInp}
+        />
+        <br />
+        <small style={{ color: "red" }}>{errors.name}</small>
+        <br />
 
-                <button type="submit">submit</button>
-            </form>
-        </>
-    )
+        {/* Email */}
+        Email:{" "}
+        <input
+          type="text"
+          name="email"
+          value={formData.email}
+          onChange={changeInp}
+        />
+        <br />
+        <small style={{ color: "red" }}>{errors.email}</small>
+        <br />
 
-}
+        {/* Contact */}
+        Contact:{" "}
+        <input
+          type="text"
+          name="contact"
+          value={formData.contact}
+          onChange={changeInp}
+        />
+        <br />
+        <small style={{ color: "red" }}>{errors.contact}</small>
+        <br />
 
-export default App
+        {/* Password */}
+        Password:{" "}
+        <input
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={changeInp}
+        />
+        <br />
+        <small style={{ color: "red" }}>{errors.password}</small>
+        <br />
+
+        <button type="submit">Submit</button>
+      </form>
+    </>
+  );
+};
+
+export default App;
