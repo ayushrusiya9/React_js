@@ -10,25 +10,45 @@ const App = ()=>{
     //     setval(e.target.value)
     // }
 
+    let [errname,seterrname] = useState("")
     let handlePrevent = (e)=>{
         e.preventDefault();
-        alert("Form submitted");
+        if(name== ""){
+            seterrname("name is required")
+        }
+        else{
+            alert("Form submitted");
+        }
+    }
+
+    const [formData,setformdata] = useState({
+        name:"",
+        email:"",
+        contact:"",
+        password:""
+    }) 
+
+    let changeInp=(e)=>{
+        setformdata({
+            ...formData,
+            [e.target.name]:e.target.value
+        })
     }
     return (
         <>
             <h1>Form</h1>   
             <form onSubmit={handlePrevent}>
-                Name :<input type="text" value={name} onChange={(e)=>{setname(e.target.value)}} /> <br /> <br />
-                <h1>{name}</h1>
+                Name :<input type="text" name="name" value={formData.name} onChange={changeInp} /> <br /> <br />
+                <h1>{formData.name}</h1>
+                <h2>{errname}</h2>  33
+                Email : <input type="text" name="email" value={formData.email} onChange={changeInp}/> <br /> <br />
+                <h1>{formData.email}</h1>
 
-                Email : <input type="text" value={email} onChange={(e)=>{setemail(e.target.value)}} /> <br /> <br />
-                <h1>{email}</h1>
+                Contact : <input type="text" name="contact" value={formData.contact} onChange={changeInp} /> <br />  <br />
+                <h1>{formData.contact}</h1>
 
-                Contact : <input type="text" value={contact} onChange={(e)=>{setcontact(e.target.value)}} /> <br />  <br />
-                <h1>{contact}</h1>
-
-                Password : <input type="text" value={password} onChange={(e)=>{setpassword(e.target.value)}} /> <br /> <br />
-                <h1>{password}</h1>
+                Password : <input type="text" name="password" value={formData.password} onChange={changeInp} /> <br /> <br />
+                <h1>{formData.password}</h1>
 
                 <button type="submit">submit</button>
             </form>
