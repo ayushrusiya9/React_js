@@ -5,6 +5,7 @@ const App = ()=>{
         {id:2,'name':'rahul','age':21},
         {id:3,'name':'rohit','age':22},
         {id:4,'name':'sachin','age':23},
+        {id:5,'name':'Sidharth','age':22},
     ];
 
     return(
