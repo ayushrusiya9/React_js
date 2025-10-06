@@ -8,3 +8,5 @@ const Mid = ()=>{
         </>
     )
 }
+
+export default Mid
