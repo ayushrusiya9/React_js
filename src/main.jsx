@@ -15,11 +15,10 @@ import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
   <MyContext.Provider>
-  <StrictMode>
-    <BrowserRouter>
-    <App/>
-    </BrowserRouter>
-  </StrictMode>
+    <StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </StrictMode>
   </MyContext.Provider>
 )
- 
