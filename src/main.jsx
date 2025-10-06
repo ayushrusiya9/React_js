@@ -9,14 +9,17 @@ import { createRoot } from 'react-dom/client'
 // import App from './form/Form'
 // import App from './map/Map'
 import App from './rendering/Randering'
+import MyContext from './props_drilling/MyContext'
 
 import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
+  <MyContext.Provider>
   <StrictMode>
     <BrowserRouter>
     <App/>
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
+  </MyContext.Provider>
 )
  
