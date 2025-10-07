@@ -17,6 +17,7 @@ const Child = ()=>{
     const handleClick = () => {
         setclick(!click); 
     }
+    
     return (
         <>
         <div style={click?theme.dark:theme.light}></div>
