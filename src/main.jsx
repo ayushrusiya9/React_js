@@ -21,8 +21,27 @@ let MyData = {
   state:"M.P"
 }
 
+let Hobby = ["coding","cricket","travelling"]
+
+let theme ={
+  light:{
+    "color":"black",
+    "backgroundColor":"white",
+    "width":"100px",
+    "height":"100px"
+  },
+  dark:{
+    "color":"white",
+    "backgroundColor":"black",
+    "width":"100px",
+    "height":"100px"
+  }
+}
+
+let numbers = [1,2]
+
 createRoot(document.getElementById('root')).render(
-  <MyContext.Provider value={MyData}>
+  <MyContext.Provider value={{theme,Hobby,MyData,numbers}}>
     <StrictMode>
       <BrowserRouter>
         <App />
