@@ -10,7 +10,8 @@ import { createRoot } from 'react-dom/client'
 // import App from './map/Map'
 // import App from './rendering/Randering'
 import MyContext from './props_drilling/MyContext'
-import App from './props_drilling/Context'
+// import App from './props_drilling/Context'
+import App from './useEffect/UseEffect'
 
 import { BrowserRouter } from 'react-router-dom'
 
