@@ -17,6 +17,9 @@ const CRUD = () => {
 
     const del = (id)=>{
         axios.delete('http://localhost:3000/Hotel/' + id + '/')
+
+        alert("Data Deleted Successfully")
+        setData(Data.filter((e)=> e.id !== id))
     }
   return (
     <>
