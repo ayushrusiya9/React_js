@@ -21,6 +21,10 @@ const CRUD = () => {
         alert("Data Deleted Successfully")
         setData(Data.filter((e)=> e.id !== id))
     }
+
+    const post = ()=>{
+        
+    }
   return (
     <>
         <h1>Show data........</h1>
