@@ -23,7 +23,7 @@ const CRUD = () => {
     }
 
     const post = ()=>{
-        
+                                              
     }
   return (
     <>
