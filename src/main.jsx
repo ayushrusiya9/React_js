@@ -12,7 +12,9 @@ import { createRoot } from 'react-dom/client'
 import MyContext from './props_drilling/MyContext'
 // import App from './props_drilling/Context'
 // import App from './useEffect/UseEffect'
-import App from './Axios/CRUD'
+// import App from './Axios/CRUD'
+// import App from "./useRef/Useref.jsx"
+import App from "./useMemo/Usememo.jsx";
 
 import { BrowserRouter } from 'react-router-dom'
 
