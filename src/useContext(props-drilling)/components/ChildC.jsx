@@ -1,16 +1,26 @@
 import React, { useContext } from 'react'
-import { UserContext } from '../Parent'
+// import { UserContext } from '../Parent'
+import { ThemeContext } from '../Parent'
+
+
 const ChildC = () => {
-  const user = useContext(UserContext)
+  // const user = useContext(UserContext)
+  const {theme,setTheme} = useContext(ThemeContext)
+
+  function toggleTheme(){
+    if(theme === "light")
+      setTheme("dark")
+    else
+      setTheme("light")
+  }
 
   return (
-    <div>
-      <h1>hello jii...</h1>
-      <h1>{user.name}</h1>
-      <h1>{user.age}</h1>
-      <h1>{user.city}</h1>
-    </div>
+    <>
+      <button
+      onClick={toggleTheme}
+      >Click To change</button>
+    </>
   )
 }
 
-export default ChildC
+export default ChildC;
