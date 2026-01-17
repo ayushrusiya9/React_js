@@ -14,7 +14,8 @@ import MyContext from './props_drilling/MyContext'
 // import App from './useEffect/UseEffect'
 // import App from './Axios/CRUD'
 // import App from "./useRef/Useref.jsx"
-import App from "./useMemo/Usememo.jsx";
+// import App from "./useMemo/Usememo.jsx";
+import App from "./useContext(props-drilling)/Parent"
 
 import { BrowserRouter } from 'react-router-dom'
 
